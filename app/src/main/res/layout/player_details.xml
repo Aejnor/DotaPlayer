@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:dotaPlayer="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adolfo.dota2proplayer.ViewPlayerDetailsActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        dotaPlayer:layout_constraintEnd_toEndOf="parent"
+        dotaPlayer:layout_constraintStart_toStartOf="parent"
+        dotaPlayer:layout_constraintTop_toTopOf="parent"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        dotaPlayer:cardBackgroundColor="?colorPrimary"
+        dotaPlayer:cardCornerRadius="0dp"
+        dotaPlayer:cardPreventCornerOverlap="false"
+        dotaPlayer:layout_constraintLeft_toLeftOf="parent"
+        dotaPlayer:layout_constraintRight_toRightOf="parent"
+        dotaPlayer:contentPaddingTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/player_image"
+                android:layout_width="287dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="3"
+                android:contentDescription="Descripcion"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder" />
+
+            <TextView
+                android:id="@+id/player_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/dotaPlayerPrimaryTextColor"
+                android:textSize="24sp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/player_steam_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:textColor="@color/dotaPlayerSecondaryTextColor"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/player_team_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/dotaPlayerPrimaryTextColor"
+                android:textSize="16sp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/player_team_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/dotaPlayerPrimaryTextColor"
+                android:textSize="16sp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
