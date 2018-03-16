@@ -21,9 +21,9 @@ public class GetDotaJsonData extends GetRawData {
     private List<Player> mPlayers;
     private Uri mDestinationUri;
 
-    public GetDotaJsonData() {
+    public GetDotaJsonData(String searchCriteria, boolean matchAll) {
         super(null);
-        createUri();
+        createUri(searchCriteria, matchAll);
         mPlayers = new ArrayList<>();
     }
 
@@ -31,7 +31,7 @@ public class GetDotaJsonData extends GetRawData {
         return mPlayers;
     }
 
-    private boolean createUri() {
+    private boolean createUri(String searchCriteria, boolean matchAll) {
         final String DOTA_BASE_API_URL = "https://api.opendota.com/api/proPlayers";
 
         mDestinationUri = Uri.parse(DOTA_BASE_API_URL).buildUpon().build();
