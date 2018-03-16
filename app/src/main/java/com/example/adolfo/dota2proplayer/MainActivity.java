@@ -72,23 +72,17 @@ public class MainActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
 
-        SharedPreferences sharedPreferences =
-                PreferenceManager.getDefaultSharedPreferences(
-                        getApplicationContext()
-                );
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String query = getSavedPreferenceData(PLAYER_QUERY);
+
         if ( query.length() > 0) {
-            ProcessPlayer processPlayer =
-                    new ProcessPlayer();
+            ProcessPlayer processPlayer = new ProcessPlayer(query, true);
             processPlayer.execute();
         }
     }
 
     private String getSavedPreferenceData(String championQuery) {
-        SharedPreferences sharedPreferences =
-                PreferenceManager.getDefaultSharedPreferences(
-                        getApplicationContext()
-                );
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         return sharedPreferences.getString(championQuery, "");
     }
@@ -112,8 +106,8 @@ public class MainActivity extends BaseActivity {
 
     public class ProcessPlayer extends GetDotaJsonData {
 
-        public ProcessPlayer() {
-            super();
+        public ProcessPlayer(String searchCriteria, boolean matchAll) {
+            super(searchCriteria, matchAll);
         }
 
         @Override

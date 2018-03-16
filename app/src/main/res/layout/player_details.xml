@@ -84,7 +84,7 @@
                 android:layout_weight="1"/>
 
             <TextView
-                android:id="@+id/player_team_"
+                android:id="@+id/player_team_tag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"

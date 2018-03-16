@@ -58,15 +58,15 @@ public class GetDotaJsonData extends GetRawData {
             JSONArray itemsArray = new JSONArray(getData());
 
             for (int i = 0; i < itemsArray.length(); i++) {
-                JSONObject jsonPhoto = itemsArray.getJSONObject(i);
-                String steam_id = jsonPhoto.getString(PLAYER_STEAM_ID);
-                String avatar_medium = jsonPhoto.getString(PLAYER_AVATAR_MEDIUM);
-                String avatar_full = jsonPhoto.getString(PLAYER_AVATAR_FULL);
-                String persona_name = jsonPhoto.getString(PLAYER_PERSONA_NAME);
-                String name = jsonPhoto.getString(PLAYER_NAME);
-                String team_name = jsonPhoto.getString(PLAYER_TEAM_NAME);
-                String team_tag = jsonPhoto.getString(PLAYER_TEAM_TAG);
-                String country = jsonPhoto.getString(PLAYER_COUNTRY);
+                JSONObject jsonPlayer = itemsArray.getJSONObject(i);
+                String steam_id = jsonPlayer.getString(PLAYER_STEAM_ID);
+                String avatar_medium = jsonPlayer.getString(PLAYER_AVATAR_MEDIUM);
+                String avatar_full = jsonPlayer.getString(PLAYER_AVATAR_FULL);
+                String persona_name = jsonPlayer.getString(PLAYER_PERSONA_NAME);
+                String name = jsonPlayer.getString(PLAYER_NAME);
+                String team_name = jsonPlayer.getString(PLAYER_TEAM_NAME);
+                String team_tag = jsonPlayer.getString(PLAYER_TEAM_TAG);
+                String country = jsonPlayer.getString(PLAYER_COUNTRY);
 
 
                 Player player = new Player(steam_id, avatar_medium, avatar_full, persona_name, name, team_name, team_tag, country);
@@ -80,6 +80,7 @@ public class GetDotaJsonData extends GetRawData {
             Log.e(LOG_TAG, "No se puede crear el objeto JSON");
             e.printStackTrace();
         }
+
     }
 
     public void execute() {
